@@ -31,7 +31,7 @@ if (isset($_SESSION["username"])) {
                     $id = $_POST['id'];
                     $username = $_POST['username'];
 
-                    $sql = "INSERT INTO cats (name,breed,age,sex,details,sterilization) VALUES ('$id','$username', '$breed','$age','$sex','$details','$sterilization'); ";
+                    $sql = "INSERT INTO cats (name,breed,age,sex,details,sterilization) VALUES ('$id','$username','$name', '$breed','$age','$sex','$details','$sterilization'); ";
 
                     try {
                         executeInsert($db, $sql);

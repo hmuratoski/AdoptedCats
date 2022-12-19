@@ -1,0 +1,428 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AdoptedCats",
+		"_postman_id": "c62afc34-60e3-0a1b-d5f1-7294623f2e2a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post a username",
+			"request": {
+				"url": "http://localhost:3001/register.php",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Hamu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "passwd",
+							"value": "Hamu346",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Post a username"
+			},
+			"response": []
+		},
+		{
+			"name": "Username already existing check",
+			"request": {
+				"url": "http://localhost:3001/register.php",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "username",
+						"value": "Hamu",
+						"description": ""
+					},
+					{
+						"key": "passwd",
+						"value": "Hamu364",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic SGFtdTpIYW11MzY0",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Hamu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "passwd",
+							"value": "Hamu364",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "get admin permission"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/user.php?action=login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "login",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Hamu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "passwd",
+							"value": "Hamu346",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/user.php?action=logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "logout",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "login check",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/user.php?action=loginSession",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "loginSession",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get kitties from database",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/getData.php?action=getCats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"getData.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getCats",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get kitties/users",
+			"request": {
+				"url": "http://localhost:3001/getData.php",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/getData.php?action=getUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"getData.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getUsers",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add cats to database(admin)",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/admin.php?action=addCats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "addCats",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Hamu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Muru",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "Russian Blue",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "female",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "details",
+							"value": "Outgoing, loads of energy.",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "sterilization",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete cats from database(admin)",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3001/admin.php?action=deleteCats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin.php"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "deleteCats",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "Hamu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Muru",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "Russian Blue",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "female",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "details",
+							"value": "Outgoing, loads of energy.",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "sterilization",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

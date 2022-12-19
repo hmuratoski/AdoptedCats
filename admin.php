@@ -30,8 +30,20 @@ if (isset($_SESSION["username"])) {
                 case "addCats":
                     $id = $_POST['id'];
                     $username = $_POST['username'];
+                    $name = $_POST['name'];
+                    $breed = $_POST['breed'];
+                    $age = $_POST['age'];
+                    $sex = $_POST['sex'];
+                    $details = $_POST['details'];
+                    $sterilization = $_POST['sterilization'];
 
-                    $sql = "INSERT INTO cats (name,breed,age,sex,details,sterilization) VALUES ('$id','$username','$name', '$breed','$age','$sex','$details','$sterilization'); ";
+
+
+
+
+
+
+                    $sql = "INSERT INTO cats (id,username,name,breed,age,sex,details,sterilization) VALUES ('$id','$username','$name', '$breed','$age','$sex','$details','$sterilization'); ";
 
                     try {
                         executeInsert($db, $sql);
@@ -44,12 +56,11 @@ if (isset($_SESSION["username"])) {
 
                 case "deleteCats":
                     $id = $_POST['id'];
-
                     $sql = "DELETE FROM cats WHERE id = '$id' ";
 
                     try {
                         executeInsert($db, $sql);
-                        echo json_encode('Cat' . $id ."  deleted successfully from the database");
+                        echo json_encode('Cat ' . $id ."  deleted successfully from the database");
                     } catch (PDOException $pdoex) {
                         returnError($pdoex);
                         echo "Failed";

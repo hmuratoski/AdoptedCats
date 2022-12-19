@@ -12,7 +12,7 @@
 		switch ($action) {
 
 			case "getCats":
-				$query = 'select * from cats';
+				$query = 'select id,username,name,breed,age,sex,details,sterilization from cats';
 			break;
 			
 			case "getUsers":

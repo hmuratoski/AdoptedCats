@@ -220,17 +220,6 @@
 			"response": []
 		},
 		{
-			"name": "get kitties/users",
-			"request": {
-				"url": "http://localhost:3001/getData.php",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
 			"name": "get users",
 			"request": {
 				"url": {
@@ -289,44 +278,44 @@
 					"mode": "formdata",
 					"formdata": [
 						{
-							"key": "id",
-							"value": "1",
-							"description": "",
-							"type": "text"
-						},
-						{
 							"key": "username",
 							"value": "Hamu",
 							"description": "",
 							"type": "text"
 						},
 						{
+							"key": "id",
+							"value": "6",
+							"description": "",
+							"type": "text"
+						},
+						{
 							"key": "name",
-							"value": "Muru",
+							"value": "Mala",
 							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "breed",
-							"value": "Russian Blue",
+							"value": "Ragdoll",
 							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "age",
-							"value": "3",
+							"value": "1",
 							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "sex",
-							"value": "female",
+							"value": "male",
 							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "details",
-							"value": "Outgoing, loads of energy.",
+							"value": "Calm and affectionate",
 							"description": "",
 							"type": "text"
 						},
